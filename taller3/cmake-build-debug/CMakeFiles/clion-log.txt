@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/MinGW/bin/mingw32-make.exe -G "CodeBlocks - MinGW Makefiles" C:\Users\Alejandro\Documents\Semestre_1_2020\ComputacionGrafica\taller3
+"C:\Program Files\JetBrains\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/MinGW/bin/mingw32-make.exe -G "CodeBlocks - MinGW Makefiles" C:\Users\Alejandro\Documents\Semestre_1_2020\ComputacionGrafica\ComputacionGrafica\taller3
 -- The C compiler identification is GNU 9.2.0
 -- The CXX compiler identification is GNU 9.2.0
 -- Check for working C compiler: C:/MinGW/bin/gcc.exe
@@ -13,6 +13,8 @@
 -- Detecting CXX compiler ABI info - done
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
+-- Found OpenGL: opengl32   
+-- Found GLUT: C:/MinGW/lib/libfreeglut.a  
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/Alejandro/Documents/Semestre_1_2020/ComputacionGrafica/taller3/cmake-build-debug
+-- Build files have been written to: C:/Users/Alejandro/Documents/Semestre_1_2020/ComputacionGrafica/ComputacionGrafica/taller3/cmake-build-debug
