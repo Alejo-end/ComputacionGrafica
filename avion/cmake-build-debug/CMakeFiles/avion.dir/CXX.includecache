@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Alejandro/Documents/Semestre_1_2020/ComputacionGrafica/ComputacionGrafica/avion/main.cpp
+GL/glut.h
+-
+cmath
+-
+
