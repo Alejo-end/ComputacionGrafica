@@ -1,4 +1,5 @@
 #include <GL/glut.h>
+#include <windows.h>
 #include <cmath>
 
 #if defined(LINUX) || defined(WIN32)
@@ -10,7 +11,7 @@ void dibujar();
 void proyeccion();
 void avion();
 
-
+float radio = 10, calx, caly;
 
 //teclado
 float pos_x = 0;
@@ -93,6 +94,15 @@ void avion(){
     glEnd();
 
 
+    glBegin(GL_POLYGON);
+    glColor3f(1.0, 0.0, 0.0);
+    for (float i=0; i<10; i+=0.01)
+    {
+        calx = radio * cos(i);
+        caly = radio * sin(i);
+        glVertex2f(calx-50, caly);
+    }
+    glEnd();
     glFlush();
 }
 
