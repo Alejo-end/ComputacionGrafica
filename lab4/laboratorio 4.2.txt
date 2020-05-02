@@ -1,0 +1,77 @@
+#include<GL/glut.h>
+
+void iniciar(void)
+{
+    GLfloat color_esfera_ambiente[]={0.5,0.5,0.5,1.0};
+    GLfloat color_esfera_difuso[]={0.8,0.8,0.8,1.0};
+    GLfloat color_esfera_especular[]={0.5,0.5,0.5,1.0};
+    GLfloat brillo_esfera_especular[]={5.0};
+    GLfloat luz_ambiente[]={0.9,0.9,0.2,1.0};
+glMaterialfv(GL_FRONT, GL_AMBIENT, color_esfera_ambiente);
+    glMaterialfv(GL_FRONT,GL_DIFFUSE,color_esfera_difuso);
+     glMaterialfv(GL_FRONT,GL_SPECULAR,color_esfera_especular);
+    glMaterialfv(GL_FRONT,GL_SHININESS,brillo_esfera_especular);
+    glLightModelfv(GL_LIGHT_MODEL_AMBIENT,luz_ambiente);
+     glEnable(GL_LIGHTING);
+         glEnable(GL_LIGHT0);
+         glClearColor(0.0,0.0,0.0,0.0);
+}
+
+void dibuja(void)
+{
+    GLfloat luz_blanca_ambiente[]={0.1,0.1,0.1,1.0};
+    GLfloat luz_blanca_difusa[]={0.8,0.8,0.8,1.0};
+    GLfloat luz_blanca_especular[]={0.4,0.4,0.4,1.0};
+    GLfloat luz_roja_ambiente[]={0.2,0.0,0.0,1.0};
+    GLfloat luz_roja_difusa[]={0.8,0.3,0.3,1.0};
+    GLfloat luz_roja_especular[]={0.4,0.1,0.1,1.0};
+    GLfloat luz_posicion_baja[]={0.0,0.0,-0.5,1.0};
+    GLfloat luz_posicion_alta[]={0.0,0.2,-0.8,1.0};
+    glClear(GL_COLOR_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    glPushMatrix();
+    glShadeModel(GL_SMOOTH);
+    glTranslatef(-0.5,0.0,0.0);
+    glLightfv(GL_LIGHT0,GL_AMBIENT,luz_blanca_ambiente);
+    glLightfv(GL_LIGHT0,GL_DIFFUSE,luz_blanca_difusa);
+    glLightfv(GL_LIGHT0,GL_SPECULAR,luz_blanca_especular);
+    glLightfv(GL_LIGHT0,GL_POSITION,luz_posicion_baja);
+    glutSolidSphere(0.2,20,20);
+   glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.0,0.0,0.0);
+   glLightfv(GL_LIGHT0,GL_AMBIENT,luz_roja_ambiente);
+    glLightfv(GL_LIGHT0,GL_DIFFUSE,luz_roja_difusa);
+    glLightfv(GL_LIGHT0,GL_SPECULAR,luz_roja_especular);
+    glLightfv(GL_LIGHT0,GL_POSITION,luz_posicion_baja);
+     glutSolidSphere(0.2,20,20);
+   glPopMatrix();
+    glPushMatrix();
+    glShadeModel(GL_FLAT);
+    glTranslatef(0.5,0.0,0.0);
+    glLightf(GL_LIGHT0,GL_CONSTANT_ATTENUATION,0.0);
+    glLightf(GL_LIGHT0,GL_LINEAR_ATTENUATION, 1.0);
+    glLightf(GL_LIGHT0,GL_QUADRATIC_ATTENUATION,0.0);
+    glLightfv(GL_LIGHT0,GL_POSITION,luz_posicion_alta);
+    glutSolidSphere(0.2,20,20);
+    glPopMatrix();
+    glFlush();
+
+}
+
+
+
+int main (int argc, char**argv)
+{
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB );
+    glutInitWindowPosition(100,100);
+    glutInitWindowSize(500,500);
+    glutCreateWindow("Luz Posicional");
+    iniciar();
+    glutDisplayFunc(dibuja);
+    glutMainLoop();
+    return 0;
+}
+

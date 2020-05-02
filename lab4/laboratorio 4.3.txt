@@ -1,0 +1,76 @@
+#include<GL/glut.h>
+
+void iniciar()
+{
+    GLfloat color_esfera_ambiente[]={0.5,0.5,0.5,1.0};
+    GLfloat color_esfera_difuso[]={0.5,0.5,0.5,1.0};
+    GLfloat color_esfera_especular[]={0.5,0.5,0.5,1.0};
+    GLfloat brillo_esfera_especular[]={5.0};
+    GLfloat luz_ambiente[]={0.2,0.2,0.2,1.0};
+    glClearColor(0.0,0.0,0.0,0.0);
+glMaterialfv(GL_FRONT, GL_AMBIENT, color_esfera_ambiente);
+    glMaterialfv(GL_FRONT,GL_DIFFUSE,color_esfera_difuso);
+     glMaterialfv(GL_FRONT,GL_SPECULAR,color_esfera_especular);
+    glMaterialfv(GL_FRONT,GL_SHININESS,brillo_esfera_especular);
+    glLightModelfv(GL_LIGHT_MODEL_AMBIENT,luz_ambiente);
+     glEnable(GL_LIGHTING);
+         glEnable(GL_LIGHT0);
+
+}
+
+void dibuja()
+{
+    GLfloat luz_blanca_ambiente[]={0.2,0.2,0.2,1.0};
+    GLfloat luz_blanca_difusa[]={0.8,0.8,0.8,1.0};
+    GLfloat luz_blanca_especular[]={0.5,0.5,0.5,1.0};
+    GLfloat luz_verde_ambiente[]={0.2,0.5,0.2,1.0};
+    GLfloat luz_verde_difusa[]={0.3,0.8,0.3,1.0};
+    GLfloat luz_verde_especular[]={0.2,0.5,0.2,1.0};
+    GLfloat luz_direccion_zenit[]={0.0,1.0,0.0,0.0};
+    GLfloat luz_direccion_oblicua[]={1.0,1.0,0.0,0.0};
+    glClear(GL_COLOR_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    glPushMatrix();
+    glTranslatef(-0.7,0.0,0.0);
+    glLightfv(GL_LIGHT0,GL_AMBIENT,luz_blanca_ambiente);
+    glLightfv(GL_LIGHT0,GL_DIFFUSE,luz_blanca_difusa);
+    glLightfv(GL_LIGHT0,GL_SPECULAR,luz_blanca_especular);
+    glLightfv(GL_LIGHT0,GL_POSITION,luz_direccion_zenit);
+    glutSolidSphere(0.3,50,50);
+   glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.0,0.0,0.0);
+   glLightfv(GL_LIGHT0,GL_AMBIENT,luz_blanca_ambiente);
+    glLightfv(GL_LIGHT0,GL_DIFFUSE,luz_blanca_difusa);
+    glLightfv(GL_LIGHT0,GL_SPECULAR,luz_blanca_especular);
+    glLightfv(GL_LIGHT0,GL_POSITION,luz_direccion_oblicua);
+     glutSolidSphere(0.3,50,50);
+   glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.7,0.0,0.0);
+    glLightfv(GL_LIGHT0,GL_AMBIENT,luz_verde_ambiente);
+    glLightfv(GL_LIGHT0,GL_DIFFUSE,luz_verde_difusa);
+    glLightfv(GL_LIGHT0,GL_SPECULAR,luz_verde_especular);
+    glLightfv(GL_LIGHT0,GL_POSITION,luz_direccion_oblicua);
+    glutSolidSphere(0.3,50,50);
+    glPopMatrix();
+    glFlush();
+
+}
+
+
+
+int main (int argc, char**argv)
+{
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB );
+    glutInitWindowPosition(100,100);
+    glutInitWindowSize(500,500);
+    glutCreateWindow("Luz Direccional");
+    iniciar();
+    glutDisplayFunc(dibuja);
+    glutMainLoop();
+    return 0;
+}
+

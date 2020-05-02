@@ -1,0 +1,61 @@
+#include<GL/glut.h>
+
+void iniciar()
+{
+    GLfloat color_difuso_y_ambiente[]={0.8,0.8,0.8,1.0};
+    GLfloat color_especular[]={0.1,0.5,0.8,1.0};
+    GLfloat brillo_especular[]={2.0};
+    glClearColor (0.0,0.0,0.0,0.0);
+glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color_difuso_y_ambiente);
+    glMaterialfv(GL_FRONT,GL_SPECULAR,color_especular);
+     glMaterialfv(GL_FRONT,GL_SHININESS,brillo_especular);
+     glEnable(GL_LIGHTING);
+         glEnable(GL_LIGHT0);
+}
+
+void dibuja(void)
+{
+    GLfloat luz_posicion[]={0.0,0.2,-0.8,1.0};
+    GLfloat luz_ambiente_ninguna[]={0.0,0.0,0.0,1.0};
+     GLfloat luz_ambiente_suave[]={0.2,0.2,0.2,1.0};
+      GLfloat luz_ambiente_fuerte[]={0.6,0.2,0.2,1.0};
+      glClear(GL_COLOR_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    glPushMatrix();
+     glTranslatef(-0.7,0.0,0.0);
+    glLightModelfv(GL_LIGHT_MODEL_AMBIENT,luz_ambiente_ninguna);
+    glLightfv(GL_LIGHT0,GL_POSITION,luz_posicion);
+    glutSolidSphere(0.3,25,25);
+   glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.0,0.0,0.0);
+    glLightModelfv(GL_LIGHT_MODEL_AMBIENT,luz_ambiente_suave);
+     glLightfv(GL_LIGHT0,GL_POSITION,luz_posicion);
+    glutSolidSphere(0.3,25,25);
+   glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.7,0.0,0.0);
+   glLightModelfv(GL_LIGHT_MODEL_AMBIENT,luz_ambiente_fuerte);
+    glLightfv(GL_LIGHT0,GL_POSITION,luz_posicion);
+     glutSolidSphere(0.3,25,25);
+   glPopMatrix();
+    glFlush();
+
+}
+
+
+
+int main (int argc, char**argv)
+{
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB );
+    glutInitWindowPosition(100,100);
+    glutInitWindowSize(500,500);
+    glutCreateWindow("Luz Ambiente");
+    iniciar();
+    glutDisplayFunc(dibuja);
+    glutMainLoop();
+    return 0;
+}
+
