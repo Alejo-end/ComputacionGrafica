@@ -8,7 +8,7 @@ using namespace std;
 
 void dibujar();
 void proyeccion();
-void nombre();
+void avion();
 
 
 
@@ -30,11 +30,11 @@ void dibujar() {
     glLineWidth(2.0);
 
 }
-void nombre(){
+void avion(){
     glClear(GL_COLOR_BUFFER_BIT);
     glClearColor(1.0,1.0,1.0,0.0);
     glColor3f(0.0,1.0,0.5);
-    glLineWidth(3.0);
+    glLineWidth(4.0);
 
     //Cuerpo
     glBegin(GL_LINE_STRIP);
@@ -48,6 +48,49 @@ void nombre(){
 
     glEnd();
 
+    //ala baja
+    glBegin(GL_LINE_STRIP);
+
+    glVertex2i(9,1);
+    glVertex2i(1,1);
+    glVertex2i(4,2);
+    glVertex2i(9,2);
+    glVertex2i(9,1);
+
+    glEnd();
+
+    //ala alta
+    glBegin(GL_LINE_STRIP);
+
+    glVertex2i(10,7);
+    glVertex2i(2,7);
+    glVertex2i(5,8);
+    glVertex2i(10,8);
+    glVertex2i(10,7);
+
+    glEnd();
+
+    // esqueleto
+    glBegin(GL_LINE_STRIP);
+
+    glVertex2i(3,1);
+    glVertex2i(5,7);
+    glVertex2i(7,2);
+    glVertex2i(8,7);
+
+    glEnd();
+
+    //motor
+    glBegin(GL_LINE_STRIP);
+
+    glVertex2i(10,-1);
+    glVertex2i(10,6);
+    glVertex2i(12,6);
+    glVertex2i(12,-1);
+    glVertex2i(10,-1);
+
+
+    glEnd();
 
 
     glFlush();
@@ -77,7 +120,7 @@ int main(int argc, char **argv){
 
     proyeccion();
     dibujar();
-    nombre();
+    avion();
 
 
     glClearColor(1.0,1.0,1.0,0.0);
