@@ -29,6 +29,19 @@ void dibujar() {
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glColor3f(1.0, 0.0, 0.0);
     glLineWidth(2.0);
+    GLfloat color_esfera_ambiente[]={0.5,0.5,0.5,1.0};
+    GLfloat color_esfera_difuso[]={0.5,0.5,0.5,1.0};
+    GLfloat color_esfera_especular[]={0.5,0.5,0.5,1.0};
+    GLfloat brillo_esfera_especular[]={5.0};
+    GLfloat luz_ambiente[]={0.2,0.2,0.2,1.0};
+    glClearColor(0.0,0.0,0.0,0.0);
+    glMaterialfv(GL_FRONT, GL_AMBIENT, color_esfera_ambiente);
+    glMaterialfv(GL_FRONT,GL_DIFFUSE,color_esfera_difuso);
+    glMaterialfv(GL_FRONT,GL_SPECULAR,color_esfera_especular);
+    glMaterialfv(GL_FRONT,GL_SHININESS,brillo_esfera_especular);
+    glLightModelfv(GL_LIGHT_MODEL_AMBIENT,luz_ambiente);
+    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
 
 }
 void avion(){
@@ -104,6 +117,7 @@ void avion(){
     }
     glEnd();
     glFlush();
+    
 }
 
 
