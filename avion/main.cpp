@@ -10,8 +10,9 @@ using namespace std;
 void dibujar();
 void proyeccion();
 void avion();
+void circulos();
 
-float radio = 10, calx, caly;
+float px=2, py=5, radio=25, calx, caly;
 
 //teclado
 float pos_x = 0;
@@ -21,6 +22,7 @@ static int window;
 
 
 void proyeccion(){
+    glClearColor(0.1,0.1,0.1,0.0);
     glMatrixMode(GL_PROJECTION);
     gluOrtho2D(-40,40,-40,40);
 }
@@ -29,8 +31,21 @@ void dibujar() {
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glColor3f(1.0, 0.0, 0.0);
     glLineWidth(2.0);
-
+    GLfloat color_esfera_ambiente[]={0.5,0.5,0.5,1.0};
+    GLfloat color_esfera_difuso[]={0.5,0.5,0.5,1.0};
+    GLfloat color_esfera_especular[]={0.5,0.5,0.5,1.0};
+    GLfloat brillo_esfera_especular[]={5.0};
+    GLfloat luz_ambiente[]={0.2,0.2,0.2,1.0};
+    glClearColor(0.0,0.0,0.0,0.0);
+    glMaterialfv(GL_FRONT, GL_AMBIENT, color_esfera_ambiente);
+    glMaterialfv(GL_FRONT,GL_DIFFUSE,color_esfera_difuso);
+    glMaterialfv(GL_FRONT,GL_SPECULAR,color_esfera_especular);
+    glMaterialfv(GL_FRONT,GL_SHININESS,brillo_esfera_especular);
+    glLightModelfv(GL_LIGHT_MODEL_AMBIENT,luz_ambiente);
+    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
 }
+
 void avion(){
     glClear(GL_COLOR_BUFFER_BIT);
     glClearColor(1.0,1.0,1.0,0.0);
@@ -90,17 +105,51 @@ void avion(){
     glVertex2i(12,-1);
     glVertex2i(10,-1);
 
-
     glEnd();
-
-
+    glFlush();
+}
+void circulos()
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    glColor3f( 0.137255, 0.556863,0.137255);
+    glPointSize(1.0);
     glBegin(GL_POLYGON);
-    glColor3f(1.0, 0.0, 0.0);
-    for (float i=0; i<10; i+=0.01)
+    for (double i=0.0; i<10; i+=0.001)
     {
-        calx = radio * cos(i);
-        caly = radio * sin(i);
-        glVertex2f(calx-50, caly);
+        calx=(radio+10)*cos(i);
+        caly=(radio+10)*sin(i-500);
+        glVertex2f(calx-40,caly-40);
+    }
+    glEnd();
+//
+    glPointSize(1.0);
+    glBegin(GL_POLYGON);
+    for (double i=0.0; i<10; i+=0.001)
+    {
+        calx=radio*cos(i);
+        caly=radio*sin(i+50);
+        glVertex2f(calx+40,caly-40);
+    }
+    glEnd();
+//
+    glPointSize(1.0);
+    glBegin(GL_POLYGON);
+    for (double i=0.0; i<10; i+=0.001)
+    {
+        calx=radio*cos(i);
+        caly=radio*sin(i+50);
+        glVertex2f(calx+10,caly-30);
+    }
+    glEnd();
+//luna
+    glColor3f(0.85,0.85,0.85);
+    glPointSize(1.0);
+    glBegin(GL_POLYGON);
+    for (double i=0.0; i<3; i+=0.001)
+    {
+        calx=(radio-18)*cos(i);
+        caly=(radio-18)*sin(i);
+        glVertex2f(calx,caly+20);
     }
     glEnd();
     glFlush();
@@ -129,9 +178,9 @@ int main(int argc, char **argv){
     window = glutCreateWindow("avion en OpenGL");
 
     proyeccion();
-    dibujar();
+    circulos();
     avion();
-
+    dibujar();
 
     glClearColor(1.0,1.0,1.0,0.0);
     glutDisplayFunc(dibujar);
