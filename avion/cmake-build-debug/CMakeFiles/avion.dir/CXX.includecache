@@ -7,10 +7,12 @@
 #IncludeRegexTransform: 
 
 C:/Users/Alejandro/Documents/Semestre_1_2020/ComputacionGrafica/ComputacionGrafica/avion/main.cpp
+stdlib.h
+-
 GL/glut.h
 -
-windows.h
+math.h
 -
-cmath
+string.h
 -
 

@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/avion.dir/helicopter.cpp.obj"
   "CMakeFiles/avion.dir/main.cpp.obj"
   "avion.exe"
   "avion.exe.manifest"
