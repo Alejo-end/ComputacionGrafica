@@ -106,8 +106,7 @@ void avion(){
     glVertex2i(10,-1);
 
     glEnd();
-
-
+    glFlush();
     //helice
     glBegin(GL_LINE_STRIP);
     glVertex2i(14,4);
@@ -142,39 +141,72 @@ void avion(){
     glVertex2i(3,5);
 
     glEnd();
-    glFlush();//helice
+    glFlush();
+//conexion rueda
     glBegin(GL_LINE_STRIP);
-    glVertex2i(14,4);
-    glVertex2i(14,8);
-    glVertex2i(14,1);
-    glVertex2i(14,-3);
-
+    glVertex2i(5,0);
+    glVertex2i(5,-3);
+    glVertex2i(5,-3);
+    glVertex2i(8,0);
     glEnd();
     glFlush();
-
-    //union helices
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(12,2);
-    glVertex2i(15,2);
-    glVertex2i(12,3);
-    glVertex2i(15,3);
-
+    //ruedita
+    glColor3f(0.0,1.0,0.50);
+    glPointSize(1.0);
+    glBegin(GL_POLYGON);
+    for (double i=0.0; i<6; i+=0.001)
+    {
+        radio= 1.3;
+        calx=(radio)*cos(i);
+        caly=(radio)*sin(i);
+        glVertex2f(calx-6,caly);
+    }
     glEnd();
     glFlush();
-//aleta
+    // conexion ruedita
     glBegin(GL_LINE_STRIP);
-    glVertex2i(-2,5);
-    glVertex2i(-8,10);
-    glVertex2i(-8,4);
-
+    glVertex2i(-6,0);
+    glVertex2i(-6,2);
     glEnd();
     glFlush();
-//puesto piloto
-    glBegin(GL_LINE_STRIP);
-    glVertex2i(5,5);
-    glVertex2i(3,6);
-    glVertex2i(3,5);
-
+    //
+    //rueda
+    glColor3f(0.0,1.0,0.50);
+    glPointSize(1.0);
+    glBegin(GL_POLYGON);
+    for (double i=0.0; i<6; i+=0.001)
+    {
+        radio= 2.0;
+        calx=(radio)*cos(i);
+        caly=(radio)*sin(i);
+        glVertex2f(calx+5,caly-5);
+    }
+    glEnd();
+    glFlush();
+    // rueda  relleno
+    glColor4f(0.0,0.0,0.0,1.0);
+    glPointSize(1.0);
+    glBegin(GL_POLYGON);
+    for (double i=0.0; i<6; i+=0.001)
+    {
+        radio= 1;
+        calx=(radio)*cos(i);
+        caly=(radio)*sin(i);
+        glVertex2f(calx+5,caly-5);
+    }
+    glEnd();
+    glFlush();
+// rueda chiquita relleno
+    glColor4f(0.0,0.0,0.0,1.0);
+    glPointSize(1.0);
+    glBegin(GL_POLYGON);
+    for (double i=0.0; i<6; i+=0.001)
+    {
+        radio= .8;
+        calx=(radio)*cos(i);
+        caly=(radio)*sin(i);
+        glVertex2f(calx-6,caly);
+    }
     glEnd();
     glFlush();
 }
@@ -248,9 +280,6 @@ int main(int argc, char **argv){
     window = glutCreateWindow("avion en OpenGL");
 
     proyeccion();
-
-
-
     circulos();
     avion();
     dibujar();
