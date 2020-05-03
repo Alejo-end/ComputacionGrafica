@@ -106,6 +106,76 @@ void avion(){
     glVertex2i(10,-1);
 
     glEnd();
+
+
+    //helice
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(14,4);
+    glVertex2i(14,8);
+    glVertex2i(14,1);
+    glVertex2i(14,-3);
+
+    glEnd();
+    glFlush();
+
+    //union helices
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(12,2);
+    glVertex2i(15,2);
+    glVertex2i(12,3);
+    glVertex2i(15,3);
+
+    glEnd();
+    glFlush();
+//aleta
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(-2,5);
+    glVertex2i(-8,10);
+    glVertex2i(-8,4);
+
+    glEnd();
+    glFlush();
+//puesto piloto
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(5,5);
+    glVertex2i(3,6);
+    glVertex2i(3,5);
+
+    glEnd();
+    glFlush();//helice
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(14,4);
+    glVertex2i(14,8);
+    glVertex2i(14,1);
+    glVertex2i(14,-3);
+
+    glEnd();
+    glFlush();
+
+    //union helices
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(12,2);
+    glVertex2i(15,2);
+    glVertex2i(12,3);
+    glVertex2i(15,3);
+
+    glEnd();
+    glFlush();
+//aleta
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(-2,5);
+    glVertex2i(-8,10);
+    glVertex2i(-8,4);
+
+    glEnd();
+    glFlush();
+//puesto piloto
+    glBegin(GL_LINE_STRIP);
+    glVertex2i(5,5);
+    glVertex2i(3,6);
+    glVertex2i(3,5);
+
+    glEnd();
     glFlush();
 }
 void circulos()
@@ -178,6 +248,9 @@ int main(int argc, char **argv){
     window = glutCreateWindow("avion en OpenGL");
 
     proyeccion();
+
+
+
     circulos();
     avion();
     dibujar();
