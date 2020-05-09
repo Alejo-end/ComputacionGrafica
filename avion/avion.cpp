@@ -1,9 +1,8 @@
 #include <GL/glut.h>
 #include <cmath>
+#include <iostream>
 
-#if defined(LINUX) || defined(WIN32)
 using namespace std;
-#endif
 
 float radio = 0.1, calx = 0, caly = 0;
 
@@ -294,6 +293,7 @@ void tecladoMover(int tecla, int x, int y){
 }
 
 int main(int argc, char **argv){
+    cerr << "Presionar las teclas especiales de movimiento: ARRIBA, DERECHA, ABAJO, IZQUIERDA, en ese orden";
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
     glutInitWindowSize(500,500);
