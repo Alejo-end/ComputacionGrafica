@@ -267,25 +267,25 @@ void tecladoMover(int tecla, int x, int y){
         case GLUT_KEY_UP:
                 avion();
                 helice1();
-                unionHelices();
+                //unionHelices();
             break;
         
         case GLUT_KEY_DOWN:
                 avion();
                 helice4();
-                unionHelices();
+                //unionHelices();
             break;
 
         case GLUT_KEY_LEFT:
                 avion();
                 helice2();
-                unionHelices();
+                //unionHelices();
             break;
 
         case GLUT_KEY_RIGHT:
                 avion();
                 helice3();
-                unionHelices();
+               //unionHelices();
             break;    
     }
 
@@ -293,13 +293,15 @@ void tecladoMover(int tecla, int x, int y){
 }
 
 int main(int argc, char **argv){
-    cerr << "Presionar las teclas especiales de movimiento: ARRIBA, DERECHA, ABAJO, IZQUIERDA, en ese orden";
+    cerr << "Presionar las teclas especiales de movimiento: ARRIBA, DERECHA, ABAJO, IZQUIERDA, en ese orden" << endl;
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
     glutInitWindowSize(500,500);
     glutInitWindowPosition(50,100);
     glutCreateWindow("Avion en OpenGL");
 
+    glutDisplayFunc(unionHelices);
+    
     proyeccion();
     //dibujar();
     //iniciar();
@@ -308,7 +310,7 @@ int main(int argc, char **argv){
     helice2();
     //helice3();
     //helice4();
-    unionHelices();
+    //unionHelices();
 
     glutKeyboardFunc(tecladoSalir);
     glutSpecialFunc(tecladoMover);
