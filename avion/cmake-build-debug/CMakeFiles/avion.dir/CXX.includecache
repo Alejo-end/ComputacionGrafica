@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Alejandro/Documents/Semestre_1_2020/ComputacionGrafica/ComputacionGrafica/avion/main.cpp
+C:/Users/Alejandro/Documents/Semestre_1_2020/ComputacionGrafica/ComputacionGrafica/avion/helicopter.cpp
 stdlib.h
 -
 GL/glut.h
@@ -14,5 +14,13 @@ GL/glut.h
 math.h
 -
 string.h
+-
+
+C:/Users/Alejandro/Documents/Semestre_1_2020/ComputacionGrafica/ComputacionGrafica/avion/main.cpp
+GL/glut.h
+-
+windows.h
+-
+cmath
 -
 

@@ -1,0 +1,4 @@
+ToolSet: 5.3 (local)@C:\MinGW
+Options: 
+
+Options:-DCMAKE_MAKE_PROGRAM=C:/MinGW/bin/mingw32-make.exe

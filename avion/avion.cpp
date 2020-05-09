@@ -1,6 +1,7 @@
 #include <GL/glut.h>
 #include <cmath>
 #include <iostream>
+#include <windows.h>
 
 using namespace std;
 
