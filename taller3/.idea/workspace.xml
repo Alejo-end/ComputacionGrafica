@@ -12,9 +12,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dba748e4-d178-44c3-b607-34aa0ce7fd30" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/ComputacionGrafica.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/Progress/3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/objects1.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/avion.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avion/cmake-build-debug/avion.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../avion/cmake-build-debug/avion.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avioncpp/cmake-build-debug/CMakeFiles/avioncpp.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../avioncpp/cmake-build-debug/CMakeFiles/avioncpp.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../avioncpp/cmake-build-debug/avioncpp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../avioncpp/cmake-build-debug/avioncpp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/taller3.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/taller3.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/taller3.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/taller3.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +87,7 @@
       <workItem from="1588375162226" duration="66000" />
       <workItem from="1588375484813" duration="1233000" />
       <workItem from="1588454571441" duration="94000" />
+      <workItem from="1589131073475" duration="1921000" />
     </task>
     <servers />
   </component>
@@ -75,6 +99,22 @@
       <screen x="78" y="0" width="1842" height="1080" />
     </state>
     <state x="778" y="281" key="FileChooserDialogImpl/-2498.0.1986.1152/78.0.1842.1080@78.0.1842.1080" timestamp="1588454605967" />
+    <state width="1811" height="274" key="GridCell.Tab.0.bottom" timestamp="1589133083596">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state width="1811" height="274" key="GridCell.Tab.0.bottom/-2507.0.1995.1152/66.0.1854.1080@66.0.1854.1080" timestamp="1589133083596" />
+    <state width="1811" height="274" key="GridCell.Tab.0.center" timestamp="1589133083596">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state width="1811" height="274" key="GridCell.Tab.0.center/-2507.0.1995.1152/66.0.1854.1080@66.0.1854.1080" timestamp="1589133083596" />
+    <state width="1811" height="274" key="GridCell.Tab.0.left" timestamp="1589133083596">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state width="1811" height="274" key="GridCell.Tab.0.left/-2507.0.1995.1152/66.0.1854.1080@66.0.1854.1080" timestamp="1589133083596" />
+    <state width="1811" height="274" key="GridCell.Tab.0.right" timestamp="1589133083596">
+      <screen x="66" y="0" width="1854" height="1080" />
+    </state>
+    <state width="1811" height="274" key="GridCell.Tab.0.right/-2507.0.1995.1152/66.0.1854.1080@66.0.1854.1080" timestamp="1589133083596" />
     <state x="699" y="375" key="com.intellij.ide.util.TipDialog" timestamp="1588454575044">
       <screen x="78" y="0" width="1842" height="1080" />
     </state>

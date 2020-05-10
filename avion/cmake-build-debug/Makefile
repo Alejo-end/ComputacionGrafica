@@ -122,33 +122,6 @@ avion/fast:
 	$(MAKE) -f CMakeFiles\avion.dir\build.make CMakeFiles/avion.dir/build
 .PHONY : avion/fast
 
-helicopter.obj: helicopter.cpp.obj
-
-.PHONY : helicopter.obj
-
-# target to build an object file
-helicopter.cpp.obj:
-	$(MAKE) -f CMakeFiles\avion.dir\build.make CMakeFiles/avion.dir/helicopter.cpp.obj
-.PHONY : helicopter.cpp.obj
-
-helicopter.i: helicopter.cpp.i
-
-.PHONY : helicopter.i
-
-# target to preprocess a source file
-helicopter.cpp.i:
-	$(MAKE) -f CMakeFiles\avion.dir\build.make CMakeFiles/avion.dir/helicopter.cpp.i
-.PHONY : helicopter.cpp.i
-
-helicopter.s: helicopter.cpp.s
-
-.PHONY : helicopter.s
-
-# target to generate assembly for a file
-helicopter.cpp.s:
-	$(MAKE) -f CMakeFiles\avion.dir\build.make CMakeFiles/avion.dir/helicopter.cpp.s
-.PHONY : helicopter.cpp.s
-
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -185,9 +158,6 @@ help:
 	@echo ... edit_cache
 	@echo ... avion
 	@echo ... rebuild_cache
-	@echo ... helicopter.obj
-	@echo ... helicopter.i
-	@echo ... helicopter.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

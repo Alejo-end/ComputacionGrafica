@@ -1,20 +1,7 @@
 "C:\Program Files\JetBrains\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/MinGW/bin/mingw32-make.exe -G "CodeBlocks - MinGW Makefiles" C:\Users\Alejandro\Documents\Semestre_1_2020\ComputacionGrafica\ComputacionGrafica\taller3
--- The C compiler identification is GNU 9.2.0
--- The CXX compiler identification is GNU 9.2.0
--- Check for working C compiler: C:/MinGW/bin/gcc.exe
--- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Check for working CXX compiler: C:/MinGW/bin/g++.exe
--- Check for working CXX compiler: C:/MinGW/bin/g++.exe -- works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Found OpenGL: opengl32   
--- Found GLUT: C:/MinGW/lib/libfreeglut.a  
 -- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/Alejandro/Documents/Semestre_1_2020/ComputacionGrafica/ComputacionGrafica/taller3/cmake-build-debug
+CMake Error at CMakeLists.txt:9 (add_executable):
+  No SOURCES given to target: taller3
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

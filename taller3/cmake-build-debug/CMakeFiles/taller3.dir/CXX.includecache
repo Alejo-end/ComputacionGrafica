@@ -7,12 +7,20 @@
 #IncludeRegexTransform: 
 
 C:/Users/Alejandro/Documents/Semestre_1_2020/ComputacionGrafica/ComputacionGrafica/taller3/main.cpp
+cmath
+-
+iostream
+-
+cstdlib
+-
+GL/gl.h
+-
+GL/glu.h
+-
 GL/glut.h
 -
-math.h
+windows.h
 -
-GL/glut.h
--
-math.h
+cmath
 -
 
