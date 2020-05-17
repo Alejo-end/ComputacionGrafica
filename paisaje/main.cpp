@@ -1,6 +1,11 @@
-#include <GL/glut.h>
-#include <math.h>
+#include <cmath>
 #include <iostream>
+#include <cstdlib>
+
+#include <GL/glu.h>
+#include <GL/glut.h>
+#include <windows.h>
+
 
 using namespace std;
 
@@ -45,8 +50,10 @@ void sol(){
     glLightfv(GL_LIGHT0,GL_POSITION,luz_posicion);
     glutSolidSphere(0.8,25,25);
     glPopMatrix();
-
+    glDisable(GL_LIGHTING);
     glFlush();
+
+
 }
 
 void paisaje(){
