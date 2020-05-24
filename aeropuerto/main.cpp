@@ -9,7 +9,7 @@
 
 using namespace std;
 
-float radio = 0.1, calx = 0, caly = 0, pos_x = 0, radio2 = 0.5;
+float radio = 0.1, calx = 0, caly = 0, pos_x = 0, pos_y = 0, radio2 = 0.5;
 
 void proyeccion() {
     glClearColor(0.196078, 0.6, 0.8, 0.0);
@@ -51,6 +51,7 @@ void sol(){
     glutSolidSphere(0.8,25,25);
     glPopMatrix();
     glDisable(GL_LIGHTING);
+
     glFlush();
 
 
@@ -147,301 +148,8 @@ void paisaje(){
     glFlush();
 }
 
-void dibujoAutoI(){
 
-/* ----------- RELLENO -----------*/
-    //chasis
-    glColor3f(1.0,1.0,0.0);
-    glBegin(GL_POLYGON);
-    glVertex2f(-8.5 + pos_x,-6.5);
-    glVertex2f(-8.5 + pos_x,-5.5);
-    glVertex2f(-7.5 + pos_x,-5.5);
-    glVertex2f(-7 + pos_x,-5);
-    glVertex2f(-5.5 + pos_x,-5);
-    glVertex2f(-4.5 + pos_x,-5.5);
-    glVertex2f(-3.5 + pos_x,-5.5);
-    glVertex2f(-4.4 + pos_x,-6.5);
-    glVertex2f(-8.5 + pos_x,-6.5);
-    glEnd();
-    glColor3f(1.0,1.0,1.0);
-    glBegin(GL_POLYGON);
-    glVertex2f(-6.25 + pos_x,-5);
-    glVertex2f(-6.25 + pos_x,-4.5);
-    glVertex2f(-6.55 + pos_x,-4.5);
-    glVertex2f(-6.55 + pos_x,-5);
-    glEnd();
-    //ventana
-    glColor3f(0.73, 0.85, 0.92);
-    glBegin(GL_POLYGON);
-    glVertex2f(-7.15 + pos_x,-5.55);
-    glVertex2f(-6.8 + pos_x,-5.2);
-    glVertex2f(-5.6 + pos_x,-5.2);
-    glVertex2f(-5 + pos_x,-5.55);
-    glVertex2f(-7.15 + pos_x,-5.55);
-    glEnd();
-    //ruedas
-    glColor3f(0.0,0.0,0.0);
-    //derecha
-    glBegin(GL_POLYGON);
-    for (double i = 0.0; i < 6; i += 0.001) {
-        calx = (radio2)*cos(i);
-        caly = (radio2)*sin(i);
-        glVertex2f(calx - 5.425 + pos_x, caly - 6.5);
-    }
-    glEnd();
-    //izquierda
-    glBegin(GL_POLYGON);
-    for (double i = 0.0; i < 6; i += 0.001) {
-        calx = (radio2)*cos(i);
-        caly = (radio2)*sin(i);
-        glVertex2f(calx - 7.475 + pos_x, caly - 6.5);
-    }
-    glEnd();
-
-/* ----------- CONTORNO -----------*/
-    glLineWidth(3.0);
-    glColor3f(0.0,0.0,0.0);
-    //chasis
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-8.5 + pos_x,-6.5);
-    glVertex2f(-8.5 + pos_x,-5.5);
-    glVertex2f(-7.5 + pos_x,-5.5);
-    glVertex2f(-7 + pos_x,-5);
-    glVertex2f(-5.5 + pos_x,-5);
-    glVertex2f(-4.5 + pos_x,-5.5);
-    glVertex2f(-3.5 + pos_x,-5.5);
-    glVertex2f(-4.4 + pos_x,-6.5);
-    glVertex2f(-8.5 + pos_x,-6.5);
-    glEnd();
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-4.15 + pos_x,-6.2);
-    glVertex2f(-8.5 + pos_x,-6.2);
-    glEnd();
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-6.25 + pos_x,-5);
-    glVertex2f(-6.25 + pos_x,-4.5);
-    glVertex2f(-6.55 + pos_x,-4.5);
-    glVertex2f(-6.55 + pos_x,-5);
-    glEnd();
-    glPointSize(8.0);
-    glBegin(GL_POINTS);
-    glVertex2f(-4.65 + pos_x,-5.9);
-    glVertex2f(-4.9 + pos_x,-5.7);
-    glVertex2f(-5.15 + pos_x,-5.9);
-    glVertex2f(-5.4 + pos_x,-5.7);
-    glVertex2f(-5.65 + pos_x,-5.9);
-    glVertex2f(-5.4 + pos_x,-5.7);
-    glVertex2f(-5.65 + pos_x,-5.9);
-    glVertex2f(-5.9 + pos_x,-5.7);
-    glVertex2f(-6.15 + pos_x,-5.9);
-    glVertex2f(-6.4 + pos_x,-5.7);
-    glVertex2f(-6.65 + pos_x,-5.9);
-    glVertex2f(-6.9 + pos_x,-5.7);
-    glVertex2f(-7.15 + pos_x,-5.9);
-    glVertex2f(-7.4 + pos_x,-5.7);
-    glEnd();
-    //ventana
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-7.15 + pos_x,-5.55);
-    glVertex2f(-6.8 + pos_x,-5.2);
-    glVertex2f(-5.6 + pos_x,-5.2);
-    glVertex2f(-5 + pos_x,-5.55);
-    glVertex2f(-7.15 + pos_x,-5.55);
-    glEnd();
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-6.15 + pos_x,-5.55);
-    glVertex2f(-6.15 + pos_x,-5.2);
-    glEnd();
-    //reflejos
-    glLineWidth(2.0);
-    glColor3f(1.0,1.0,1.0);
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-5.65 + pos_x,-5.3);
-    glVertex2f(-5.8 + pos_x,-5.45);
-    glEnd();
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-5.55 + pos_x,-5.33);
-    glVertex2f(-5.65 + pos_x,-5.45);
-    glEnd();
-    //rines izquierda
-    glColor3f(0.7,0.7,0.7);
-    glBegin(GL_QUADS);
-    glVertex2f(-7.675 + pos_x,-6.7);
-    glVertex2f(-7.675 + pos_x,-6.3);
-    glVertex2f(-7.275 + pos_x,-6.3);
-    glVertex2f(-7.275 + pos_x,-6.7);
-    glEnd();
-    glBegin(GL_QUADS);
-    glVertex2f(-7.775 + pos_x,-6.6);
-    glVertex2f(-7.775 + pos_x,-6.4);
-    glVertex2f(-7.175 + pos_x,-6.4);
-    glVertex2f(-7.175 + pos_x,-6.6);
-    glEnd();
-    //rines derecha
-    glColor3f(0.7,0.7,0.7);
-    glBegin(GL_QUADS);
-    glVertex2f(-5.625 + pos_x,-6.7);
-    glVertex2f(-5.625 + pos_x,-6.3);
-    glVertex2f(-5.225 + pos_x,-6.3);
-    glVertex2f(-5.225 + pos_x,-6.7);
-    glEnd();
-    glBegin(GL_QUADS);
-    glVertex2f(-5.725 + pos_x,-6.6);
-    glVertex2f(-5.725 + pos_x,-6.4);
-    glVertex2f(-5.125 + pos_x,-6.4);
-    glVertex2f(-5.125 + pos_x,-6.6);
-    glEnd();
-
-    glFlush();
-}
-
-void dibujoAutoD(){
-/* ----------- RELLENO -----------*/
-    //chasis
-    glColor3f(1.0,1.0,0.0);
-    glBegin(GL_POLYGON);
-    glVertex2f(-7.4 + pos_x,-6.5);
-    glVertex2f(-8.5 + pos_x,-5.5);
-    glVertex2f(-7.5 + pos_x,-5.5);
-    glVertex2f(-6.5 + pos_x,-5);
-    glVertex2f(-5 + pos_x,-5);
-    glVertex2f(-4.5 + pos_x,-5.5);
-    glVertex2f(-3.5 + pos_x,-5.5);
-    glVertex2f(-3.5 + pos_x,-6.5);
-    glVertex2f(-8.5 + pos_x,-6.5);
-    glEnd();
-    glColor3f(1.0,1.0,1.0);
-    glBegin(GL_POLYGON);
-    glVertex2f(-5.7 + pos_x,-5);
-    glVertex2f(-5.7 + pos_x,-4.5);
-    glVertex2f(-5.45 + pos_x,-4.5);
-    glVertex2f(-5.45 + pos_x,-5);
-    glEnd();
-    //ventana
-    glColor3f(0.73, 0.85, 0.92);
-    glBegin(GL_POLYGON);
-    glVertex2f(-4.85 + pos_x,-5.55);
-    glVertex2f(-5.2 + pos_x,-5.2);
-    glVertex2f(-6.4 + pos_x,-5.2);
-    glVertex2f(-7 + pos_x,-5.55);
-    glVertex2f(-4.85 + pos_x,-5.55);
-    glEnd();
-    //ruedas
-    glColor3f(0.0,0.0,0.0);
-    //derecha
-    glBegin(GL_POLYGON);
-    for (double i = 0.0; i < 6; i += 0.001) {
-        calx = (radio2)*cos(i);
-        caly = (radio2)*sin(i);
-        glVertex2f(calx - 4.525 + pos_x, caly - 6.5);
-    }
-    glEnd();
-    //izquierda
-    glBegin(GL_POLYGON);
-    for (double i = 0.0; i < 6; i += 0.001) {
-        calx = (radio2)*cos(i);
-        caly = (radio2)*sin(i);
-        glVertex2f(calx - 6.375 + pos_x, caly - 6.5);
-    }
-    glEnd();
-
-/* ----------- CONTORNO -----------*/
-    glLineWidth(3.0);
-    glColor3f(0.0,0.0,0.0);
-    //chasis
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-7.4 + pos_x,-6.5);
-    glVertex2f(-8.5 + pos_x,-5.5);
-    glVertex2f(-7.5 + pos_x,-5.5);
-    glVertex2f(-6.5 + pos_x,-5);
-    glVertex2f(-5 + pos_x,-5);
-    glVertex2f(-4.5 + pos_x,-5.5);
-    glVertex2f(-3.5 + pos_x,-5.5);
-    glVertex2f(-3.5 + pos_x,-6.5);
-    glVertex2f(-7.4 + pos_x,-6.5);
-    glEnd();
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-3.5 + pos_x,-6.2);
-    glVertex2f(-7.7 + pos_x,-6.2);
-    glEnd();
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-5.7 + pos_x,-5);
-    glVertex2f(-5.7 + pos_x,-4.5);
-    glVertex2f(-5.45 + pos_x,-4.5);
-    glVertex2f(-5.45 + pos_x,-5);
-    glEnd();
-    glPointSize(8.0);
-    glBegin(GL_POINTS);
-    glVertex2f(-4.65 + pos_x,-5.7);
-    glVertex2f(-4.9 + pos_x,-5.9);
-    glVertex2f(-5.15 + pos_x,-5.7);
-    glVertex2f(-5.4 + pos_x,-5.9);
-    glVertex2f(-5.65 + pos_x,-5.7);
-    glVertex2f(-5.9 + pos_x,-5.9);
-    glVertex2f(-6.15 + pos_x,-5.7);
-    glVertex2f(-6.4 + pos_x,-5.9);
-    glVertex2f(-6.65 + pos_x,-5.7);
-    glVertex2f(-6.9 + pos_x,-5.9);
-    glVertex2f(-7.15 + pos_x,-5.7);
-    glVertex2f(-7.4 + pos_x,-5.9);
-    glEnd();
-    //ventana
-    glLineWidth(3.0);
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-4.85 + pos_x,-5.55);
-    glVertex2f(-5.2 + pos_x,-5.2);
-    glVertex2f(-6.4 + pos_x,-5.2);
-    glVertex2f(-7 + pos_x,-5.55);
-    glVertex2f(-4.85 + pos_x,-5.55);
-    glEnd();
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-5.8 + pos_x,-5.55);
-    glVertex2f(-5.8 + pos_x,-5.2);
-    glEnd();
-    //reflejos
-    glLineWidth(2.0);
-    glColor3f(1.0,1.0,1.0);
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-6.23 + pos_x,-5.3);
-    glVertex2f(-6.35 + pos_x,-5.45);
-    glEnd();
-    glBegin(GL_LINE_STRIP);
-    glVertex2f(-6.35 + pos_x,-5.3);
-    glVertex2f(-6.5 + pos_x,-5.45);
-    glEnd();
-    //rines izquierda
-    glColor3f(0.7,0.7,0.7);
-    glBegin(GL_QUADS);
-    glVertex2f(-6.575 + pos_x,-6.7);
-    glVertex2f(-6.575 + pos_x,-6.3);
-    glVertex2f(-6.175 + pos_x,-6.3);
-    glVertex2f(-6.175 + pos_x,-6.7);
-    glEnd();
-    glBegin(GL_QUADS);
-    glVertex2f(-6.675 + pos_x,-6.6);
-    glVertex2f(-6.675 + pos_x,-6.4);
-    glVertex2f(-6.075 + pos_x,-6.4);
-    glVertex2f(-6.075 + pos_x,-6.6);
-    glEnd();
-    //rines derecha
-    glColor3f(0.7,0.7,0.7);
-    glBegin(GL_QUADS);
-    glVertex2f(-4.725 + pos_x,-6.7);
-    glVertex2f(-4.725 + pos_x,-6.3);
-    glVertex2f(-4.325 + pos_x,-6.3);
-    glVertex2f(-4.325 + pos_x,-6.7);
-    glEnd();
-    glBegin(GL_QUADS);
-    glVertex2f(-4.825 + pos_x,-6.6);
-    glVertex2f(-4.825 + pos_x,-6.4);
-    glVertex2f(-4.225 + pos_x,-6.4);
-    glVertex2f(-4.225 + pos_x,-6.6);
-    glEnd();
-
-    glFlush();
-}
-
-void avion() {
+void dibujoAvion() {
     glClear(GL_COLOR_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
 
@@ -452,123 +160,123 @@ void avion() {
     // cuerpo
     glColor3f(0.5, 0.5, 0.5);
     glBegin(GL_POLYGON);
-    glVertex2f(-2, 0);
-    glVertex2f(-2.6, -0.4);
-    glVertex2f(-2.6, -0.7);
-    glVertex2f(-2.4, -0.8);
-    glVertex2f(-2, -0.8);
-    glVertex2f(-1, -0.4);
-    glVertex2f(0.1, 0.5);
-    glVertex2f(-0.9, 0.525);
+    glVertex2f(-2+ pos_x, 0 + pos_y);
+    glVertex2f(-2.6+ pos_x, -0.4 + pos_y);
+    glVertex2f(-2.6+ pos_x, -0.7 + pos_y);
+    glVertex2f(-2.4+ pos_x, -0.8 + pos_y);
+    glVertex2f(-2+ pos_x, -0.8 + pos_y);
+    glVertex2f(-1+ pos_x, -0.4 + pos_y);
+    glVertex2f(0.1+ pos_x, 0.5 + pos_y);
+    glVertex2f(-0.9+ pos_x, 0.525 + pos_y);
     glEnd();
     glBegin(GL_POLYGON);
-    glVertex2f(0.1, 0.5);
-    glVertex2f(-0.9, 0.525);
-    glVertex2f(-0.6, 0.6);
+    glVertex2f(0.1+ pos_x, 0.5 + pos_y);
+    glVertex2f(-0.9+ pos_x, 0.525 + pos_y);
+    glVertex2f(-0.6+ pos_x, 0.6 + pos_y);
     glEnd();
     glBegin(GL_POLYGON);
-    glVertex2f(0.1, 0.5);
-    glVertex2f(0.2, 1);
-    glVertex2f(0.2, 1.4);
-    glVertex2f(-0.2, 1.4);
-    glVertex2f(-0.6, 0.6);
+    glVertex2f(0.1+ pos_x, 0.5 + pos_y);
+    glVertex2f(0.2+ pos_x, 1 + pos_y);
+    glVertex2f(0.2+ pos_x, 1.4 + pos_y);
+    glVertex2f(-0.2+ pos_x, 1.4 + pos_y);
+    glVertex2f(-0.6+ pos_x, 0.6 + pos_y);
     glEnd();
     //asiento
     glColor3f(0.3, 0.3, 0.3);
     glBegin(GL_POLYGON);
-    glVertex2f(-1.25, 0.1);
-    glVertex2f(-1, 0.2);
-    glVertex2f(-0.8, 0.4);
-    glVertex2f(-0.9, 0.525);
-    glVertex2f(-1.4, 0.4);
+    glVertex2f(-1.25+ pos_x, 0.1 + pos_y);
+    glVertex2f(-1+ pos_x, 0.2 + pos_y);
+    glVertex2f(-0.8+ pos_x, 0.4 + pos_y);
+    glVertex2f(-0.9+ pos_x, 0.525 + pos_y);
+    glVertex2f(-1.4+ pos_x, 0.4 + pos_y);
     glEnd();
     //ventana
     glColor3f(0.73, 0.85, 0.92);
     glBegin(GL_POLYGON);
-    glVertex2f(-2, 0);
-    glVertex2f(-2, 0.4);
-    glVertex2f(-1.8, 0.5);
-    glVertex2f(-1.4, 0.4);
-    glVertex2f(-1.2, 0.2);
-    glVertex2f(-1.4, -0.2);
-    glVertex2f(-2, 0);
+    glVertex2f(-2+ pos_x, 0 + pos_y);
+    glVertex2f(-2+ pos_x, 0.4 + pos_y);
+    glVertex2f(-1.8+ pos_x, 0.5 + pos_y);
+    glVertex2f(-1.4+ pos_x, 0.4 + pos_y);
+    glVertex2f(-1.2+ pos_x, 0.2 + pos_y);
+    glVertex2f(-1.4+ pos_x, -0.2 + pos_y);
+    glVertex2f(-2+ pos_x, 0 + pos_y);
     glEnd();
     /* ------------- CONTORNO DE FONDO ------------- */
     glColor3f(0.0, 0.0, 0.0);
     // cuerpo
     glBegin(GL_LINE_STRIP);
-    glVertex2f(-2, 0);
-    glVertex2f(-2.6, -0.4);
-    glVertex2f(-2.6, -0.7);
-    glVertex2f(-2.4, -0.8);
-    glVertex2f(-2, -0.8);
-    glVertex2f(-1, -0.4);
-    glVertex2f(0.1, 0.5);
-    glVertex2f(0.2, 1);
-    glVertex2f(0.2, 1.4);
-    glVertex2f(-0.2, 1.4);
-    glVertex2f(-0.6, 0.6);
-    glVertex2f(-1.4, 0.4);
+    glVertex2f(-2+ pos_x, 0 + pos_y);
+    glVertex2f(-2.6+ pos_x, -0.4 + pos_y);
+    glVertex2f(-2.6+ pos_x, -0.7 + pos_y);
+    glVertex2f(-2.4+ pos_x, -0.8 + pos_y);
+    glVertex2f(-2+ pos_x, -0.8 + pos_y);
+    glVertex2f(-1+ pos_x, -0.4 + pos_y);
+    glVertex2f(0.1+ pos_x, 0.5 + pos_y);
+    glVertex2f(0.2+ pos_x, 1 + pos_y);
+    glVertex2f(0.2+ pos_x, 1.4 + pos_y);
+    glVertex2f(-0.2+ pos_x, 1.4 + pos_y);
+    glVertex2f(-0.6+ pos_x, 0.6 + pos_y);
+    glVertex2f(-1.4+ pos_x, 0.4 + pos_y);
     glEnd();
 
     /* ------------- RELLENO ------------- */
     glColor3f(0.5, 0.5, 0.5);
     //aleta
     glBegin(GL_POLYGON);
-    glVertex2f(0, 0.3);
-    glVertex2f(0.6, 0.2);
-    glVertex2f(0.9, 0.4);
-    glVertex2f(-0.2, 0.7);
-    glVertex2f(-0.3, 0.4);
-    glVertex2f(0, 0.3);
+    glVertex2f(0+ pos_x, 0.3 + pos_y);
+    glVertex2f(0.6+ pos_x, 0.2 + pos_y);
+    glVertex2f(0.9+ pos_x, 0.4 + pos_y);
+    glVertex2f(-0.2+ pos_x, 0.7 + pos_y);
+    glVertex2f(-0.3+ pos_x, 0.4 + pos_y);
+    glVertex2f(0+ pos_x, 0.3 + pos_y);
     glEnd();
     //ala
     glBegin(GL_POLYGON);
-    glVertex2f(-0.7, 0);
-    glVertex2f(-1.3, -0.5);
-    glVertex2f(0, -0.7);
-    glVertex2f(0.3, -0.5);
-    glVertex2f(-0.7, 0);
+    glVertex2f(-0.7+ pos_x, 0 + pos_y);
+    glVertex2f(-1.3+ pos_x, -0.5 + pos_y);
+    glVertex2f(0+ pos_x, -0.7 + pos_y);
+    glVertex2f(0.3+ pos_x, -0.5 + pos_y);
+    glVertex2f(-0.7+ pos_x, 0 + pos_y);
     glEnd();
 
     /* ------------- CONTORNO ------------- */
     glColor3f(0.0, 0.0, 0.0);
     //ventana
     glBegin(GL_LINE_STRIP);
-    glVertex2f(-2, 0);
-    glVertex2f(-2, 0.4);
-    glVertex2f(-1.8, 0.5);
-    glVertex2f(-1.4, 0.4);
-    glVertex2f(-1.2, 0.2);
-    glVertex2f(-1.4, -0.2);
-    glVertex2f(-2, 0);
+    glVertex2f(-2+ pos_x, 0 + pos_y);
+    glVertex2f(-2+ pos_x, 0.4 + pos_y);
+    glVertex2f(-1.8+ pos_x, 0.5 + pos_y);
+    glVertex2f(-1.4+ pos_x, 0.4 + pos_y);
+    glVertex2f(-1.2+ pos_x, 0.2 + pos_y);
+    glVertex2f(-1.4+ pos_x, -0.2 + pos_y);
+    glVertex2f(-2+ pos_x, 0 + pos_y);
     glEnd();
     //aleta
 
     glBegin(GL_LINE_STRIP);
-    glVertex2f(0, 0.3);
-    glVertex2f(0.6, 0.2);
-    glVertex2f(0.9, 0.4);
-    glVertex2f(-0.2, 0.7);
-    glVertex2f(-0.3, 0.4);
-    glVertex2f(0, 0.3);
+    glVertex2f(0+ pos_x, 0.3 + pos_y);
+    glVertex2f(0.6+ pos_x, 0.2 + pos_y);
+    glVertex2f(0.9+ pos_x, 0.4 + pos_y);
+    glVertex2f(-0.2+ pos_x, 0.7 + pos_y);
+    glVertex2f(-0.3+ pos_x, 0.4 + pos_y);
+    glVertex2f(0+ pos_x, 0.3 + pos_y);
     glEnd();
     //ala
 
     glBegin(GL_LINE_STRIP);
-    glVertex2f(-0.7, 0);
-    glVertex2f(-1.3, -0.5);
-    glVertex2f(0, -0.7);
-    glVertex2f(0.3, -0.5);
-    glVertex2f(-0.7, 0);
+    glVertex2f(-0.7+ pos_x, 0 + pos_y);
+    glVertex2f(-1.3+ pos_x, -0.5 + pos_y);
+    glVertex2f(0+ pos_x, -0.7 + pos_y);
+    glVertex2f(0.3+ pos_x, -0.5 + pos_y);
+    glVertex2f(-0.7+ pos_x, 0 + pos_y);
     glEnd();
     //asiento
 
     glBegin(GL_LINE_STRIP);
-    glVertex2f(-1.25, 0.1);
-    glVertex2f(-1, 0.2);
-    glVertex2f(-0.8, 0.4);
-    glVertex2f(-0.9, 0.525);
+    glVertex2f(-1.25+ pos_x, 0.1 + pos_y);
+    glVertex2f(-1+ pos_x, 0.2 + pos_y);
+    glVertex2f(-0.8+ pos_x, 0.4 + pos_y);
+    glVertex2f(-0.9+ pos_x, 0.525 + pos_y);
     glEnd();
 
 /* ------------- Hélice 1 ------------- */
@@ -576,20 +284,20 @@ void avion() {
 
     //izquierda
     glBegin(GL_POLYGON);
-    glVertex2f(-2.55, -0.7);
-    glVertex2f(-2.7, -0.15);
-    glVertex2f(-3, 0);
-    glVertex2f(-3, -0.3);
-    glVertex2f(-2.55, -0.7);
+    glVertex2f(-2.55+ pos_x, -0.7 + pos_y);
+    glVertex2f(-2.7+ pos_x, -0.15 + pos_y);
+    glVertex2f(-3+ pos_x, 0 + pos_y);
+    glVertex2f(-3+ pos_x, -0.3 + pos_y);
+    glVertex2f(-2.55+ pos_x, -0.7 + pos_y);
     glEnd();
 
     //derecha
     glBegin(GL_POLYGON);
-    glVertex2f(-2.55, -0.7);
-    glVertex2f(-2.35, -1.3);
-    glVertex2f(-2.1, -1.4);
-    glVertex2f(-2.05, -1.15);
-    glVertex2f(-2.55, -0.7);
+    glVertex2f(-2.55+ pos_x, -0.7 + pos_y);
+    glVertex2f(-2.35+ pos_x, -1.3 + pos_y);
+    glVertex2f(-2.1+ pos_x, -1.4 + pos_y);
+    glVertex2f(-2.05+ pos_x, -1.15 + pos_y);
+    glVertex2f(-2.55+ pos_x, -0.7 + pos_y);
     glEnd();
 
 /* ------------- Unión de hélices ------------- */
@@ -599,7 +307,7 @@ void avion() {
     for (double i = 0.0; i < 6; i += 0.001) {
         calx = (radio)*cos(i);
         caly = (radio)*sin(i);
-        glVertex2f(calx - 2.55, caly - 0.7);
+        glVertex2f(calx - 2.55 + pos_x, caly - 0.7 + pos_y);
     }
     glEnd();
 
@@ -609,26 +317,20 @@ void avion() {
     for (double i = 0.0; i < 6; i += 0.001) {
         calx = (radio)*cos(i);
         caly = (radio)*sin(i);
-        glVertex2f(calx - 2.55, caly - 0.7);
+        glVertex2f(calx - 2.55 + pos_x, caly - 0.7 + pos_y);
     }
     glEnd();
 
-    glFlush();
+
 }
 
-void dibujar1(){
-    avion();
+void dibujar(){
+
+    dibujoAvion();
     paisaje();
-    dibujoAutoI();
     sol();
 }
 
-void dibujar2(){
-    avion();
-    paisaje();
-    dibujoAutoD();
-    sol();
-}
 
 void tecladoSalir(unsigned char key, int x, int y) {
     switch (key) {
@@ -641,11 +343,17 @@ void tecladoSalir(unsigned char key, int x, int y) {
 void tecladoMover(int tecla, int x, int y) {
     switch (tecla) {
         case GLUT_KEY_UP:
-            glutDisplayFunc(dibujar1);
+            pos_y = pos_y + 0.25;
+            if(pos_y > 11){
+                pos_y = 0;
+            }
             break;
 
         case GLUT_KEY_DOWN:
-            glutDisplayFunc(dibujar2);
+            pos_y = pos_y - 0.25;
+            if(pos_y < -8){
+                pos_y = 0;
+            }
             break;
 
         case GLUT_KEY_RIGHT:
@@ -676,7 +384,7 @@ int main(int argc, char** argv) {
 
     proyeccion();
 
-    glutDisplayFunc(dibujar1);
+    glutDisplayFunc(dibujar);
 
     glutKeyboardFunc(tecladoSalir);
     glutSpecialFunc(tecladoMover);

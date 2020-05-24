@@ -78,6 +78,7 @@ aeropuerto_EXTERNAL_OBJECTS =
 
 aeropuerto.exe: CMakeFiles/aeropuerto.dir/main.cpp.obj
 aeropuerto.exe: CMakeFiles/aeropuerto.dir/build.make
+aeropuerto.exe: C:/MinGW/lib/libfreeglut.a
 aeropuerto.exe: CMakeFiles/aeropuerto.dir/linklibs.rsp
 aeropuerto.exe: CMakeFiles/aeropuerto.dir/objects1.rsp
 aeropuerto.exe: CMakeFiles/aeropuerto.dir/link.txt

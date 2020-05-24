@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Alejandro/Documents/Semestre_1_2020/ComputacionGrafica/ComputacionGrafica/aeropuerto/main.cpp
+cmath
+-
+iostream
+-
+cstdlib
+-
+GL/glu.h
+-
+GL/glut.h
+-
+windows.h
+-
+
