@@ -59,6 +59,7 @@ void sol(){
 
 void paisaje(){
     //calle
+    glClear(GL_COLOR_BUFFER_BIT);
     glColor3f(0.25,0.25,0.25);
     glBegin(GL_POLYGON);
     glVertex2f(-11, -4);
@@ -144,13 +145,40 @@ void paisaje(){
     glVertex2f(-4, -0.5);
     glVertex2f(-5.8,-1.5);
     glEnd();
+    //edificio
+    glColor3f(0.76,0.45,0.20);
+    glBegin(GL_QUADS);
+    glVertex2i(-7,-4);
+    glVertex2i(-7,-1);
+    glVertex2i(-3,-1);
+    glVertex2i(-3,-4);
+    glEnd();
+    glFlush();
+    //ventanas
+    glColor3f(0.30,0.0,0.90);
+    glBegin(GL_QUADS);
+    glVertex2i(-6,-2);
+    glVertex2i(-4,-2);
+    glVertex2i(-4,-4);
+    glVertex2i(-6,-4);
+    glEnd();
+    glFlush();
+    //torre
+    glColor3f(0.76,0.45,0.20);
+    glBegin(GL_QUADS);
+    glVertex2i(-9,-4);
+    glVertex2i(-9,0);
+    glVertex2i(-8,0);
+    glVertex2i(-8,-4);
+    glEnd();
+    glFlush();
 
     glFlush();
 }
 
 
 void dibujoAvion() {
-    glClear(GL_COLOR_BUFFER_BIT);
+
     glMatrixMode(GL_MODELVIEW);
 
     glLineWidth(2.0);
@@ -325,9 +353,9 @@ void dibujoAvion() {
 }
 
 void dibujar(){
-
-    dibujoAvion();
     paisaje();
+    dibujoAvion();
+
     sol();
 }
 
@@ -344,28 +372,28 @@ void tecladoMover(int tecla, int x, int y) {
     switch (tecla) {
         case GLUT_KEY_UP:
             pos_y = pos_y + 0.25;
-            if(pos_y > 11){
+            if(pos_y > 3){
                 pos_y = 0;
             }
             break;
 
         case GLUT_KEY_DOWN:
             pos_y = pos_y - 0.25;
-            if(pos_y < -8){
+            if(pos_y < -3){
                 pos_y = 0;
             }
             break;
 
         case GLUT_KEY_RIGHT:
             pos_x = pos_x + 0.25;
-            if(pos_x > 11){
+            if(pos_x > 4){
                 pos_x = 0;
             }
             break;
 
         case GLUT_KEY_LEFT:
             pos_x = pos_x - 0.25;
-            if(pos_x < -8){
+            if(pos_x < -10){
                 pos_x = 0;
             }
             break;
